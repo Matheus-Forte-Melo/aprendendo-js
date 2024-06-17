@@ -1,0 +1,98 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header h1 {
+    font-size: 3.5em;
+    padding: 15px;
+    text-align: center;
+}
+
+#user-input {
+    height: 65px;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+}
+
+#input-tarefa {
+    font-size: 1.4em;
+    text-indent: 20px;
+    width: 45.8%;
+    height: 62px;
+}
+
+#add-tarefa-btn {
+    height: 66px; 
+    background-color: rgb(2, 160, 2);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 0 20px; 
+}
+
+#add-tarefa-btn:hover {
+    cursor: pointer;
+}
+
+#add-tarefa-btn:active {
+    background-color: rgb(2, 131, 2);
+}
+
+
+.tarefa {
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    
+    width: 50%;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-color: white;
+
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.415);
+}
+
+.btn-deletar {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border: none;
+    margin: -20px -20px -20px 0px;
+}
+
+.btn-deletar:hover {
+    cursor: pointer;
+}
+
+.btn-deletar:active {
+    background-color: rgb(206, 1, 1);
+}
+
+.tarefa-p {
+    text-align: center;
+    word-wrap: break-word; /* break word para quebrar assim que passar da max width*/
+    max-width: 55%;
+    
+}
+
+.tarefa-concluida {
+    background-color: rgb(247, 246, 246);
+}
+
+.tarefa-concluida .tarefa-p {
+    color: grey;
+    text-decoration: line-through;
+    
+}

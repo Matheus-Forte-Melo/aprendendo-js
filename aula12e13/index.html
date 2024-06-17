@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste If e Switch</title>
+</head>
+<body onload="carregarTamanhoLC()">
+    <h1>Benga checker</h1>
+    <p id="resultado">Selecione o tamanho da sua benga</p>
+    <div>
+        <input type="radio" name="tam_benga" id="tam_benga1" value="0-3cm" onchange="verificarTamanho()">
+        <label for="tam_benga1">0-3cm</label>
+
+        <input type="radio" name="tam_benga" id="tam_benga2" value="4-7cm" onchange="verificarTamanho()">
+        <label for="tam_benga2">4-7cm</label>
+
+        <input type="radio" name="tam_benga" id="tam_benga3" value="8-12cm" onchange="verificarTamanho()">
+        <label for="tam_benga3">8-12cm</label>
+
+        <input type="radio" name="tam_benga" id="tam_benga4" value="13-15cm" onchange="verificarTamanho()">
+        <label for="tam_benga4">13-15cm</label>
+
+        <input type="radio" name="tam_benga" id="tam_benga5" value="16-20cm" onchange="verificarTamanho()">
+        <label for="tam_benga5">16-20cm</label>
+    </div>
+
+    <br>
+
+    <form action="" method="GET">
+        <label for="input_cor">Digite uma cor, em inglês ou em hexadecimal:</label>
+        <input type="text" name="input_cor" id="input_cor" placeholder="Ex: yellow">    
+    </form>
+    <button onclick="validarInputCor()">Validar</button>
+    <p id="feedback"></p>
+
+    <script src="index.js"></script>
+</body>
+</html>

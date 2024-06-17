@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+</head>
+<body>
+    <!-- Podemos botar mais de um event listener em um elemeto -->
+    
+    <div style="display: flex; width: 50vw;">
+        <button style="width: 45px" onclick="incrementar()"> +1 </button>
+        <button style="width: 45px" onclick="decrementar()"> -1 </button>
+        <p style="margin-left: 25px;" id="contador">0</p>
+        <button style="width: 105px; margin-left: 25px;" ondblclick="resetContador()"> Resetar</button>
+    </div>
+    <p>Double Click para restar</p>
+    
+    <div onmouseover="mudarCor()" onmouseout="mudarCor()" id="divCor" style="width: 250px; height: 250px; display: flex; justify-content: center; align-items: center;">
+        Sou uma div de cores!
+    </div>
+
+    <div onmousemove="adicionarTexto()" id="divLouca" style="border: solid 1px black; word-wrap: break-word; overflow-wrap: break-word;">
+        Sou uma div Trilouca
+        <p></p>
+    </div>
+
+    <div>
+        <button style="margin: 15px;" onmouseup="mouseCima()" onmousedown="mouseBaixo()" id="estadoMouse">Pressione</button>
+    </div>
+
+    <div>
+        <input onkeyup="mostrarTecla()" type="text" id="text" autocomplete="off">
+        <p>Você está escrevendo: <span id="texto_escrito"></span></p>
+        <p>A ultima tecla que apertou: <span id="tecla"></span></p>
+    </div>
+
+    <form action="" method="GET">
+        <input type="text" name="q" id="q">
+        <p id="resultado_input"></p>
+    </form>
+
+    <script src="index.js"></script>
+</body>
+</html>

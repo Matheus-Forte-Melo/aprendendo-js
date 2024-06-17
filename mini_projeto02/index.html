@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversões</title>
+</head>
+<body>
+    <header>
+
+    </header>  
+    <main>
+        <select onchange="displayConversoes()" name="tipo-conversao" id="tipo-conversao">
+            <option value="" selected disabled>- Selecione uma tabela de conversão -</option>
+            <option value="tempo">Conversões de tempo</option>
+            <option value="medida">Conversões de medida</option>
+            <option value="temperatura">Conversões de temperatura</option>
+        </select>
+
+        <select style="display: none;" name="conversoes" id="conversoes">
+
+        </select>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>

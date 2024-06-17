@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos de tempo</title>
+    <style>
+
+    main {
+        display: flex;
+        justify-content: center;
+    }    
+
+    .botao{
+        background-color: whitesmoke;
+        border: 0px;
+        margin: 25px;
+        width: 200px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.168);
+    }
+
+    .botao:active {
+        background-color: rgb(222, 222, 222);
+    }
+
+    p#cronometro {
+        display: flex;  
+        justify-content: center;
+        align-items: center;
+        font-size: 4.5em;
+    }
+
+    .divInput {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        width: 20%;
+    }
+
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Cronômetro</h1>
+    
+    <div class="divInput">
+        <input id="inputCont" type="number" >
+        <button onclick="enviarValorCont()">Setar</button>
+    </div>
+    <p id="feedback" style="text-align: center;">O contador incrementará por 1</p>
+
+
+    <main>
+        <button class="botao" onclick="comecarContagem()">Ativar Contagem</button>
+        <button class="botao" onclick="pararContagem()"> Desativar Contagem</button>
+    </main>
+
+    <p id="cronometro" >0s</p>
+    
+    <script src="index.js"></script>
+</body>
+</html>
