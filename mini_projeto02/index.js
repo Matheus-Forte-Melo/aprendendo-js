@@ -4,6 +4,7 @@ const conversaoTemperatura = {"Celsius para Fahrenheit": "C/F", "Celsius para Ke
     
 const conversaoDistancia = {"Centímetros para Metros": "cm/m", "Centímetros para Quilômetros": "cm/km", "Metros para Centímetros": "m/cm", "Metros para Quilômetros": "m/km", "Quilômetros para Centímetros": "km/cm", "Quilômetros para Metros": "km/m"};
 
+let event_criado = false;
 
 function conversoesTempo(tipo, valor) {
     switch (tipo) {
@@ -69,11 +70,24 @@ function conversoesDistancia(tipo, valor) {
     }
 }
 
-console.log(conversoesDistancia("km/cm", 3));
+function teste(valor_conv) {
+    let tipo = document.getElementById('tipo-conversao').value;
+    console.log(tipo);
+    console.log(valor_conv);
+}   
 
 function configurarOpts(opt1, opt2, opt3, variavel_tipo) {
     let contador = 0;
-    let elementoSelectOpcoes = document.getElementById('conversoes'); // "Of" itera sobre os indices
+    let elementoSelectOpcoes = document.getElementById('conversoes'); // "Of" itera sobre os indices 
+
+    if (!event_criado) {
+        elementoSelectOpcoes.addEventListener('change', function() {
+            teste(elementoSelectOpcoes.value, variavel_tipo);
+        });
+
+        event_criado = true
+    }    
+    
 
     if (elementoSelectOpcoes.innerHTML != null) {
         elementoSelectOpcoes.innerHTML = ""
@@ -99,17 +113,18 @@ function configurarOpts(opt1, opt2, opt3, variavel_tipo) {
         opcaoConversao.value = variavel_tipo[tipo];
         optgroupTipo.appendChild(opcaoConversao);
     }   
+
 }
 
-function configurarOptGroups(opt1, opt2, contagem, elemento_select_opcoes) {
+function configurarOptGroups(opt2, opt3, contagem, elemento_select_opcoes) {
     let novoOptgroup = null; // Nunca estará recriando o let pois são bloco diferentes em diferentes etapas da iteração
     if (contagem == 3) {
         novoOptgroup = document.createElement('optgroup');
-        novoOptgroup.label = opt1;
+        novoOptgroup.label = opt2;
         elemento_select_opcoes.appendChild(novoOptgroup);
     } else if (contagem == 5) {
         novoOptgroup = document.createElement('optgroup');
-        novoOptgroup.label = opt2;
+        novoOptgroup.label = opt3;
         elemento_select_opcoes.appendChild(novoOptgroup);
     }
     return novoOptgroup;
@@ -118,7 +133,6 @@ function configurarOptGroups(opt1, opt2, contagem, elemento_select_opcoes) {
 function displayConversoes() {
     let tipoConversao = document.getElementById('tipo-conversao');
     
-
     switch (tipoConversao.value) {
         case "tempo":
             configurarOpts("Segundos", "Minutos", "Horas", conversaoTempo);
