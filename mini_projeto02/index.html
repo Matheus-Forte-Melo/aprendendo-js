@@ -21,7 +21,13 @@
 
         </select>
 
-        <p id="feedback_conversão"></p>
+        <p id="feedback-conversao"></p>
+        <div id="interacao-container">
+            <label for="input-conversao">Digite o número a ser convertido</label> <br>
+            <input type="number" name="input-conversao" id="input-conversao" >
+            <button id="btn-input-conversao" onclick="inputConversao()" >Converter</button>
+            <!--Elementos Injetados pelo JS-->
+        </div>
     </main>
     <script src="index.js"></script>
 </body>
