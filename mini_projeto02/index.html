@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversões</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
 
     </header>  
     <main>
-        <select onchange="displayConversoes()" name="tipo-conversao" id="tipo-conversao">
-            <option value="" selected disabled>- Selecione uma tabela de conversão -</option>
-            <option value="tempo">Conversões de tempo</option>
-            <option value="medida">Conversões de medida</option>
-            <option value="temperatura">Conversões de temperatura</option>
-        </select>
+        <div class="selects">
+            <select onchange="displayConversoes()" name="tipo-conversao" id="tipo-conversao">
+                <option value="" selected disabled>- Selecione uma tabela de conversão -</option>
+                <option value="tempo">Conversões de tempo</option>
+                <option value="medida">Conversões de medida</option>
+                <option value="temperatura">Conversões de temperatura</option>
+            </select>
+            <select style="display: none;" name="conversoes" id="conversoes">
+            </select>
+        </div>
 
-        <select style="display: none;" name="conversoes" id="conversoes">
-
-        </select>
-
-        <p id="feedback-conversao"></p>
+        <p style="display: none;" id="feedback-conversao"></p>
         <div id="interacao-container">
             <label for="input-conversao">Digite o número a ser convertido</label> <br>
             <input type="number" name="input-conversao" id="input-conversao" >
@@ -29,6 +30,7 @@
             <!--Elementos Injetados pelo JS-->
         </div>
     </main>
-    <script src="index.js"></script>
+    <script type="module" src="./index.js"></script>
+    <script type="module" src="./util.js"></script>
 </body>
 </html>
